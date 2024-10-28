@@ -1,5 +1,6 @@
 #include "inc_backend.hpp"
 #include <iostream>
+#include <fmt/core.h>
 
 namespace c10d {
 
@@ -30,6 +31,8 @@ IncBackend::IncBackend(int rank, int size)
 c10::intrusive_ptr<Work> IncBackend::allreduce(
     std::vector<at::Tensor>& tensors,
     const AllreduceOptions& opts) {
+  
+  fmt::print("fmt hello");
   std::cout << "hello from inc backend" << std::endl;
   for (auto& tensor : tensors) {
       tensor.zero_();

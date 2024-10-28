@@ -1,4 +1,6 @@
-.venv/
+venv/
 build/
 *.egg-info/
 *.so
+vcpkg_installed/
+.vscode/
