@@ -1,7 +1,7 @@
 #include "inc_backend.hpp"
 #include <iostream>
 #include <fmt/core.h>
-
+#include <incc/master.h>
 namespace c10d {
 
 
@@ -33,6 +33,7 @@ c10::intrusive_ptr<Work> IncBackend::allreduce(
     const AllreduceOptions& opts) {
   
   fmt::print("fmt hello");
+  schedule();
   std::cout << "hello from inc backend" << std::endl;
   for (auto& tensor : tensors) {
       tensor.zero_();

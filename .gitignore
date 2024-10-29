@@ -4,3 +4,5 @@ build/
 *.so
 vcpkg_installed/
 .vscode/
+.DS_Store
+CMakeUserPresets.json

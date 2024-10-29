@@ -23,7 +23,7 @@ sources = ["src/inc_backend.cpp"]
 include_dirs = [f"{os.path.dirname(os.path.abspath(__file__))}/include/", f"{os.path.dirname(os.path.abspath(__file__))}/{vcpkg_installed}/{triplet}/include"]
 
 library_dirs = [f"{vcpkg_installed}/{triplet}/lib/"]
-libraries = ["fmt"]
+libraries = ["fmt", "incc"]
 
 if torch.cuda.is_available():
     module = cpp_extension.CUDAExtension(
