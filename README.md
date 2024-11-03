@@ -53,7 +53,15 @@ The triplet is detected from within setup.py.
 To build and install the extension:
 
 ```bash
-pip setup.py develop
+python setup.py develop
 ```
 
 Run the `test.py` file to see a simple demo.
+
+```bash
+python test.py
+```
+
+### Potential Errors and fixes:
+
+* ImportError: dlopen: symbol not found in flat namespace - Linker error: Check if any new files that are added in c++ are included in the build.

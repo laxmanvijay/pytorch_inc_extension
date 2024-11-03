@@ -31,9 +31,15 @@ IncBackend::IncBackend(int rank, int size)
 c10::intrusive_ptr<Work> IncBackend::allreduce(
     std::vector<at::Tensor>& tensors,
     const AllreduceOptions& opts) {
-  
-  fmt::print("fmt hello");
-  schedule();
+
+  std::vector<int> data; 
+
+    for (int i = 0; i < 40; i++) {
+        data.push_back(i);
+    }
+
+  int res = Scheduler::schedule(data);
+  fmt::print("Result: {}\n", res);
   std::cout << "hello from inc backend" << std::endl;
   for (auto& tensor : tensors) {
       tensor.zero_();
