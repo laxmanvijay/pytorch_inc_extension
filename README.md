@@ -45,6 +45,12 @@ vcpkg install
 pip install -r requirements.txt
 ```
 
+Everytime `pytorch_inc_compute` changes, it must be recompiled and linked into this repository.
+
+```bash
+cd .. && vcpkg install incc --overlay-ports=pytorch_inc_compute && cd ./pytorch_inc_extension && vcpkg install 
+```
+
 ## Usage
 
 The setup.py by default points to the default vcpkg install folder: `vcpkg_installed` for include and lib folders.
